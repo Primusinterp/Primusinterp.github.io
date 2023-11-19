@@ -19,6 +19,8 @@ const resource = [
     
         '/C-Primusinterp-Whoami/',
     
+        '/PrimusC2/',
+    
 
     /* --- Favicons & compressed JS --- */
     
