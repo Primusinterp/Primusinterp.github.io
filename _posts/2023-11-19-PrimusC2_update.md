@@ -4,7 +4,7 @@ categories: [PrimusC2, update 2.0]
 tags: [AD, Red Team, C2, PrimusC2, ExecuteAssembly]    
 ---
 
-![Primusinterp's Github logo](../assets/img/Primusc2.png)
+![Primusinterp's Github logo](/assets/img/Primusc2.png)
 --- 
 I am very happy to have this new update of PrimusC2 released. I have hit some pretty big milestones with the project and done some cool stuff.
 
