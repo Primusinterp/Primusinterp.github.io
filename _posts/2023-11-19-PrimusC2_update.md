@@ -1,12 +1,14 @@
 ---
 title: PrimusC2 - New Release | Update 2.0
-categories: [PrimusC2, update 2.0]
+categories: [PrimusC2, updates]
 tags: [AD, Red Team, C2, PrimusC2, ExecuteAssembly]    
 ---
 
 ![Primusinterp's Github logo](/assets/img/Primusc2.png)
 --- 
 I am very happy to have this new update of PrimusC2 released. I have hit some pretty big milestones with the project and done some cool stuff.
+
+[PrimusC2 Github link](https://github.com/Primusinterp/PrimusC2)
 
 ## What's new:
 - File Operations

@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>. .\Primusinterp</title>
   <subtitle>An offenisve blog about hacking, programming and other stuff.</subtitle>
-  <updated>2023-11-20T18:21:50+01:00</updated>
+  <updated>2023-12-28T18:59:47+01:00</updated>
   <author>
     <name>Oliver Albertsen</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,59 @@
 
   
   <entry>
+    <title>PrimusC2 - New Release | Update 3.0</title>
+    <link href="http://localhost:4000/posts/PrimusC2_update_3.0/" rel="alternate" type="text/html" title="PrimusC2 - New Release | Update 3.0" />
+    <published>2023-12-24T00:00:00+01:00</published>
+  
+    <updated>2023-12-24T00:00:00+01:00</updated>
+  
+    <id>http://localhost:4000/posts/PrimusC2_update_3.0/</id>
+    <content src="http://localhost:4000/posts/PrimusC2_update_3.0/" />
+    <author>
+      <name>Oliver Albertsen</name>
+    </author>
+
+  
+    
+    <category term="PrimusC2" />
+    
+    <category term="updates" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+I am very happy to have this new update of PrimusC2 released. I have completed a lot of the tasks on the roadmap and made more Qol stuff that makes the C2 more nice to use and work with!
+
+PrimusC2 Github link
+
+What’s new:
+
+  HTTP based implant 😎 
+    
+      Execute .NET Assembly in memory
+      Regsitry persistance capability
+      Download of files from target
+      Callback interval(Sleep) a...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>PrimusC2 - New Release | Update 2.0</title>
     <link href="http://localhost:4000/posts/PrimusC2_update/" rel="alternate" type="text/html" title="PrimusC2 - New Release | Update 2.0" />
     <published>2023-11-19T00:00:00+01:00</published>
   
-    <updated>2023-11-19T00:00:00+01:00</updated>
+    <updated>2023-11-20T18:22:35+01:00</updated>
   
     <id>http://localhost:4000/posts/PrimusC2_update/</id>
     <content src="http://localhost:4000/posts/PrimusC2_update/" />
@@ -36,7 +84,7 @@
     
     <category term="PrimusC2" />
     
-    <category term="update 2.0" />
+    <category term="updates" />
     
   
 
@@ -51,6 +99,8 @@
       
 I am very happy to have this new update of PrimusC2 released. I have hit some pretty big milestones with the project and done some cool stuff.
 
+PrimusC2 Github link
+
 What’s new:
 
   File Operations
@@ -63,7 +113,7 @@ What’s new:
   Execute .NET Assembly in memory (HYPE)
   Revamp of data transfer between server and implant 
   Added more exception handling (not bulletproof yet)
-  Changed how the implant hand...
+  Change...
     </summary>
   
 

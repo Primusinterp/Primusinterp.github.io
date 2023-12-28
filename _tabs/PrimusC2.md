@@ -13,6 +13,8 @@ A C2 framework built for my bachelors thesis at KEA - Københavns Erhvervsakadem
 
 I work on this project in my spare time when i am not working or doing other security stuff, i am by no means a skilled coding genuis, but i love to learn and improve :) If you have any suggetions for me or feedback i would love to hear it, you can reach me on my socials. 
 
+If interested you can download my bachelor thesis [here](/assets/Bachelor_Report_Oliver_Albertsen.pdf) - keep in mind that a lot has changed for the framework since its publication, so some aspects may not apply any more.
+
 
 ## Installation 
 To get the dependencies installed and the server ready to go, it's needed to run the setup script and a few manual commands.
@@ -99,8 +101,12 @@ To get started(redirector):
 ### Roadmap
 - [x] Execute-Assembly 
 - [ ] Inline-Assembly
-- [ ] Encryption of data streams
+- [x] Encryption of data streams
 - [ ] Implementation of smart pipe redirectors with automation
-- [ ] Upload/download functionality for the implant
+- [x] Download functionality for the implant
+- [ ] Upload functionality for the implant
 - [x] Directory operations
-- [ ] HTTP C2 channel 
+- [x] HTTP C2 channel 
+- [ ] Improve OPSEC
+- [ ] Evasion techniques
+- [ ] Custom Term Rewriting Macro
