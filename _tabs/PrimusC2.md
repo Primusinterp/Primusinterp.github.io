@@ -29,11 +29,14 @@ sudo chmod +x setup.sh
 ```
 run the setup script with source
 ```bash
-source setup.py
+source setup.sh
 ```
 Install nim packages:
 ```
-sudo nimble install -y winim strenc
+sudo nimble install -y winim 
+sudo nimble install -y strenc 
+sudo nimble install -y shlex 
+sudo nimble install -y terminaltables
 ```
 Run the server from the C2 folder:
 ```bash
@@ -45,7 +48,8 @@ python3 server.py
 - Nim Implant 
 - Bypass AMSI
 - Directory Operations
-- Execute .NET assembly - *Unstable and Risky*
+- Download functionaility 
+- Execute .NET assembly - *Risky*
 - Powershell in unmanged runspace
 - GetAV - current anti-virus products installed 
 - Powershell download cradle 
@@ -55,17 +59,19 @@ python3 server.py
 
 ## Usage
 The following functionality is implemented in PrimusC2's current state:
+
+*Beware that some features are only supported with the HTTP implant*
 ```bash
     ------------------------------------------------------------------------------------------------------
     Menu Commands
     ------------------------------------------------------------------------------------------------------
-    listeners -g                --> Generate a new listener on desired interface
-    nimplant                    --> Generate a compiled exe payload written in nim with advanced capabilities for windows
-    sessions -l                 --> List callbacks
-    sessions -i <sessions_val>  --> Enter a callback session
-    use <sessions_val>          --> Enter a callback session
+    listener -g <TYPE>          --> Generate a HTTP or TCP listener
+    nimplant -g <TYPE>          --> Generate a compiled exe payload written in nim with advanced capabilities for windows for either TCP or HTTP
+    callbacks                   --> List callbacks
+    use <callback ID> [use 0]   --> Enter a callback session
     pwsh_cradle                 --> Generate a pwsh cradle for a payload on the payloads server
     kill <sessions_val>         --> Terminate active callback
+    payloads                    --> List payloads available on for either transfer or execution
     exit                        --> exit from the server
 
     Implant Commands
@@ -78,18 +84,22 @@ The following functionality is implemented in PrimusC2's current state:
     ls                          --> List files in current directory
     cd <dir>                    --> Change current working directory
     pwd                         --> Print current working directory
-    shell                       --> Run Windows CMD commands on target
+    payloads                    --> List payloads available on for either transfer or execution
+    shell <COMMAND>             --> Run Windows CMD commands on target
+    sleep <milseconds>          --> Adjust callback time [Default 5000] - HTTP only
+    persist <k_name> <payload>  --> Deploy regsitry persistance to run a payload on startup(OPSEC: RISKY) - HTTP only
+    download <file>             --> Download file from target(dont use "" around file name or path) - HTTP only
 
 ```
 
 To get started(simple):
-1. Generate a listener `listeners -g`
+1. Generate a listener `listener -g <TYPE>`
 2. Generate an implant `nimplant`
 3. Transfer the implant to the target and await callback
 4. Happy hacking :)
 
 To get started(redirector):
-1. Generate a listener `listeners -g`
+1. Generate a listener `listener -g TCP`
 2. Choose `Listener with redirector` 
 3. Input data and wait for redirector provisioning 
 4. Generate an implant `nimplant`
