@@ -79,7 +79,7 @@ A short walkthrough of the new interface can be seen below:
 ![walkthrough](/assets/img/Primus-web-walktrough.gif)
 
 ### Credit 
-A colleague of mine []() is on his Python learning journey. I tasked him with writing me a simple Python script, that would auto-generate me some Star Wars related names. He created a cool function that i could use in the `pwsh_cradle` command 😎
+A colleague of mine [srask3n](https://github.com/srask3n) is on his Python learning journey. I tasked him with writing me a simple Python script, that would auto-generate me some Star Wars related names. He created a cool function that i could use in the `pwsh_cradle` command 😎
 
 ### Conclusion
 This update introduces some pretty significant additions to the framework and certainly helps with improving the maturity of the project. With the new redirector setup and the HTTPS implant a whole new lane of opportunity has opened up and im excited to built upon it in the future. The introduction of the help menu and the web interface helps with improving the accessibility of the framework and hopefully makes it more pleasant to use. A lot of small changes have been made to the backend as well. However one of my next big goals is to rewrite the backend so it uses a proper database instead of everything living in confusing Lists, Dicts strings etc 😭.
