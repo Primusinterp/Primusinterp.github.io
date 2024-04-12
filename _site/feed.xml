@@ -3,8 +3,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <id>http://localhost:4000/</id>
   <title>. .\Primusinterp</title>
-  <subtitle>An offenisve blog about hacking, programming and other stuff.</subtitle>
-  <updated>2023-12-28T18:59:47+01:00</updated>
+  <subtitle>An offenisve Security blog about hacking, Active Directory, maldev and other cyber security/redteam related stuff.</subtitle>
+  <updated>2024-04-11T20:38:19+02:00</updated>
   <author>
     <name>Oliver Albertsen</name>
     <uri>http://localhost:4000/</uri>
@@ -13,10 +13,61 @@
   <link rel="alternate" type="text/html" hreflang="en"
     href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
-  <rights> © 2023 Oliver Albertsen </rights>
+  <rights> © 2024 Oliver Albertsen </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>PrimusC2 - New Release | Update 4.0</title>
+    <link href="http://localhost:4000/posts/PrimusC2_update_4.0/" rel="alternate" type="text/html" title="PrimusC2 - New Release | Update 4.0" />
+    <published>2024-03-19T00:00:00+01:00</published>
+  
+    <updated>2024-03-19T00:00:00+01:00</updated>
+  
+    <id>http://localhost:4000/posts/PrimusC2_update_4.0/</id>
+    <content src="http://localhost:4000/posts/PrimusC2_update_4.0/" />
+    <author>
+      <name>Oliver Albertsen</name>
+    </author>
+
+  
+    
+    <category term="PrimusC2" />
+    
+    <category term="updates" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+Time for another update for PrimusC2. This update do not have as much content as the previous updates, but it has some stuff that greatly improves the maturity of the project.
+
+PrimusC2 Github link
+
+What’s new:
+
+  HTTPS based implant 😎 
+  Smart Pipe Redirector setup
+    
+      Implant callback via domains
+      cloudflare DNS
+      Automatic SSL cert via Caddy
+      Caddy
+      Modularity
+    ...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -58,7 +109,7 @@ What’s new:
   HTTP based implant 😎 
     
       Execute .NET Assembly in memory
-      Regsitry persistance capability
+      Registry persistance capability
       Download of files from target
       Callback interval(Sleep) a...
     </summary>
@@ -72,7 +123,7 @@ What’s new:
     <link href="http://localhost:4000/posts/PrimusC2_update/" rel="alternate" type="text/html" title="PrimusC2 - New Release | Update 2.0" />
     <published>2023-11-19T00:00:00+01:00</published>
   
-    <updated>2023-11-20T18:22:35+01:00</updated>
+    <updated>2023-12-28T19:00:14+01:00</updated>
   
     <id>http://localhost:4000/posts/PrimusC2_update/</id>
     <content src="http://localhost:4000/posts/PrimusC2_update/" />

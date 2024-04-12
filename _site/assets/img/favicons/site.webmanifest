@@ -3,7 +3,7 @@
 {
   "name": ". .\Primusinterp",
   "short_name": ". .\Primusinterp",
-  "description": "An offenisve blog about hacking, programming and other stuff.",
+  "description": "An offenisve Security blog about hacking, Active Directory, maldev and other cyber security/redteam related stuff.",
   "icons": [
     {
       "src": "/assets/img/favicons/android-chrome-192x192.png",

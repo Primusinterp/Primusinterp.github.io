@@ -13,7 +13,7 @@ I am very happy to have this new update of PrimusC2 released. I have completed a
 ## What's new:
 - HTTP based implant 😎 
     + Execute .NET Assembly in memory
-    + Regsitry persistance capability 
+    + Registry persistance capability 
     + Download of files from target
     + Callback interval(Sleep) adjustable
     + Server a static webpage if browsing to '/' of the C2 server

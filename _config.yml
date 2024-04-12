@@ -23,7 +23,7 @@ title: . .\Primusinterp # the main title
 tagline: An Offensive blog # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  An offenisve blog about hacking, programming and other stuff.
+  An offenisve Security blog about hacking, Active Directory, maldev and other cyber security/redteam related stuff.
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: "http://primusinterp.com"
@@ -32,7 +32,7 @@ github:
   username: Primusinterp # change to your github username
 
 twitter:
-  username: Primusinterp # change to your twitter username
+  username: AlbertsenOliver # change to your twitter username
 
 social:
   # Change to your full name.
@@ -153,6 +153,7 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+      toc: true 
   - scope:
       path: assets/img/favicons
     values:
