@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>. .\Primusinterp</title>
   <subtitle>An offenisve Security blog about hacking, Active Directory, maldev and other cyber security/redteam related stuff.</subtitle>
-  <updated>2024-04-12T17:06:48+02:00</updated>
+  <updated>2024-05-26T11:08:47+02:00</updated>
   <author>
     <name>Oliver Albertsen</name>
     <uri>http://localhost:4000/</uri>
@@ -20,11 +20,87 @@
 
   
   <entry>
+    <title>CRTO Review</title>
+    <link href="http://localhost:4000/posts/CRTO/" rel="alternate" type="text/html" title="CRTO Review" />
+    <published>2024-05-25T00:00:00+02:00</published>
+  
+    <updated>2024-05-25T00:00:00+02:00</updated>
+  
+    <id>http://localhost:4000/posts/CRTO/</id>
+    <content src="http://localhost:4000/posts/CRTO/" />
+    <author>
+      <name>Oliver Albertsen</name>
+    </author>
+
+  
+    
+    <category term="Certifications" />
+    
+    <category term="reviews" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      I’m very pleased to announce that I passed the Certified Red Team Operator(CRTO), from Zero-Point Security. It was quite an enjoyable experience, appreciating not only the opportunity to reinforce my existing knowledge but also the newly gained skills.
+
+Throughout this post, I will go through my thoughts about the learning material, the exam experience, and the final conclusion about the certif...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
+    <title>PrimusRedir - Fowarding the world to your C2</title>
+    <link href="http://localhost:4000/posts/Primus_Redir/" rel="alternate" type="text/html" title="PrimusRedir - Fowarding the world to your C2" />
+    <published>2024-04-14T00:00:00+02:00</published>
+  
+    <updated>2024-04-14T00:00:00+02:00</updated>
+  
+    <id>http://localhost:4000/posts/Primus_Redir/</id>
+    <content src="http://localhost:4000/posts/Primus_Redir/" />
+    <author>
+      <name>Oliver Albertsen</name>
+    </author>
+
+  
+    
+    <category term="Redteam" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+  The tool itself has not been released yet, but its coming very soon!.
+
+
+Time for a new bit of content. While working on the latest update for PrimusC2 i spent quite a while creating an automated redirector infrastructure utilizing a Digital Ocean VPS, Cloudflare, Wireguard and Caddy. This was implemented directly into PrimusC2, but i also turned this into a standalone tool that you can use w...
+    </summary>
+  
+
+  </entry>
+
+  
+  <entry>
     <title>PrimusC2 - New Release | Update 4.0</title>
     <link href="http://localhost:4000/posts/PrimusC2_update_4.0/" rel="alternate" type="text/html" title="PrimusC2 - New Release | Update 4.0" />
     <published>2024-03-19T00:00:00+01:00</published>
   
-    <updated>2024-03-19T00:00:00+01:00</updated>
+    <updated>2024-04-12T17:10:27+02:00</updated>
   
     <id>http://localhost:4000/posts/PrimusC2_update_4.0/</id>
     <content src="http://localhost:4000/posts/PrimusC2_update_4.0/" />
@@ -165,92 +241,6 @@ What’s new:
   Revamp of data transfer between server and implant 
   Added more exception handling (not bulletproof yet)
   Change...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>CRTP Review</title>
-    <link href="http://localhost:4000/posts/CRTP/" rel="alternate" type="text/html" title="CRTP Review" />
-    <published>2023-10-11T00:00:00+02:00</published>
-  
-    <updated>2023-10-11T00:00:00+02:00</updated>
-  
-    <id>http://localhost:4000/posts/CRTP/</id>
-    <content src="http://localhost:4000/posts/CRTP/" />
-    <author>
-      <name>Oliver Albertsen</name>
-    </author>
-
-  
-    
-    <category term="Certifications" />
-    
-    <category term="reviews" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      
-
-I’m very pleased to announce that I passed the Certified Red Team Professional(CRTP), from Altered Security. It was quite an enjoyable experience, appreciating not only the opportunity to reinforce my existing knowledge but also the newly gained skills.
-
-Throughout this post, I will go through my thoughts about the learning material, the exam experience, and the final conclusion about the cer...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>First Post!</title>
-    <link href="http://localhost:4000/posts/first_post/" rel="alternate" type="text/html" title="First Post!" />
-    <published>2023-09-09T00:00:00+02:00</published>
-  
-    <updated>2023-09-09T00:00:00+02:00</updated>
-  
-    <id>http://localhost:4000/posts/first_post/</id>
-    <content src="http://localhost:4000/posts/first_post/" />
-    <author>
-      <name>Oliver Albertsen</name>
-    </author>
-
-  
-    
-    <category term="Informational" />
-    
-    <category term="Update" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      The first post
-This will be my first post on this blog/wiki/anything site. I havent fully decided on what content that i will post here, but i have some ideas. The following things are properly going to show up here at some point:
-
-
-  Updates on the development of my C2 Framework PrimusC2
-  HTB writeups(of some sort)
-  More Maldev stuff(as i learn)
-  Random Offensive Security Stuff
-
-
-Thanks for...
     </summary>
   
 
