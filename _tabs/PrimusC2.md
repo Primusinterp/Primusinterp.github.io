@@ -24,7 +24,28 @@ I work on this project in my spare time when i am not working or doing other sec
 If interested you can download my bachelor thesis [here](/assets/Bachelor_Report_Oliver_Albertsen.pdf) - keep in mind that a lot has changed for the framework since its publication, so some aspects may not apply any more.
 
 
-## Installation 
+## Installation
+
+### The easy way
+Docker shenanigans 
+
+Clone and cd into the `PrimusC2` folder
+```bash
+git clone https://github.com/Primusinterp/PrimusC2.git
+
+cd PrimusC2
+```
+
+build all the things!
+```bash
+sudo docker build -t primusc2 .   
+```
+
+Run all the things!
+```bash
+sudo docker run --network=host -v $(pwd)/C2/Generated_Implants:/app/C2/Generated_Implants/ -it primusc2
+```
+### The hard way
 To get the dependencies installed and the server ready to go, it's needed to run the setup script and a few manual commands.
 
 git clone `PrimusC2`
@@ -52,11 +73,9 @@ nimble install -y puppy
 nimble install -y byteutils
 ```
 Run the server from the C2 folder:
-
 ```bash
 sudo -E python3 server.py
 ```
-*If any issues arise while running the nimplant command, try and compile the implant manually to see errors*
 
 ## Features
 - Python C2 server 
@@ -69,8 +88,10 @@ sudo -E python3 server.py
 - GetAV - current anti-virus products installed 
 - Powershell download cradle 
 - Dynamic implant generation 
+- .exe, .bin & .dll payload formats.
 - Automated Redirector setup via Digital Ocean VPS(Smart-Pipe & Dump-Pipe)
 - Web Interface
+- steal_token
 
 
 ## Usage
@@ -81,6 +102,7 @@ The following functionality is implemented in PrimusC2's current state:
     ------------------------------------------------------------------------------------------------------
     Menu Commands
     ------------------------------------------------------------------------------------------------------
+    help <command>              --> Get help for a specific command
     listener -g <TYPE>          --> Generate a HTTP or TCP listener
     nimplant -g <TYPE>          --> Generate a compiled exe payload written in nim with advanced capabilities for windows for either TCP or HTTP
     callbacks                   --> List callbacks
@@ -92,20 +114,24 @@ The following functionality is implemented in PrimusC2's current state:
 
     Implant Commands
     ------------------------------------------------------------------------------------------------------
+    help <command>              --> Get help for a specific command
     background                  --> Backgrounds current sessions
     exit                        --> Terminate current session
     GetAV                       --> Get the current AV running
-    pwsh <COMMAND>              --> Load CLR and run powershell in unmanged runspace 
+    pwsh <COMMAND>              --> Load CLR and run powershell in unmanaged runspace 
     execute-ASM <file> <args>   --> Execute .NET assembly from memory   
     ls                          --> List files in current directory
     cd <dir>                    --> Change current working directory
     pwd                         --> Print current working directory
     payloads                    --> List payloads available on for either transfer or execution
     shell <COMMAND>             --> Run Windows CMD commands on target
-    sleep <milseconds>          --> Adjust callback time [Default 5000] - HTTP only
+    sleep <milliseconds>        --> Adjust callback time [Default 5000] - HTTP only
     persist <k_name> <payload>  --> Deploy registry persistance to run a payload on startup(OPSEC: RISKY) - HTTP only
     download <file>             --> Download file from target(dont use "" around file name or path) - HTTP only
-
+    steal_token <PID>           --> Steal token from a process
+    rev2self                    --> Revert impersonation to original context
+    tShell                      --> run CMD.exe commands in the context of the stolen token
+    whoami                      --> Get the current user context
 ```
 
 
@@ -118,9 +144,10 @@ The following functionality is implemented in PrimusC2's current state:
 - [x] Directory operations
 - [x] HTTP C2 channel 
 - [ ] Improve OPSEC
-- [ ] Rework backend to accommodate a database for persistent storage
+- [x] Rework backend to accommodate a database for persistent storage
 - [ ] Evasion techniques
 - [ ] Custom Term Rewriting Macro
+- [ ] Refactor entire code base into multiple files and maybe classes 
 
 
 ## Documentation 
@@ -134,7 +161,6 @@ The following section documents the usage of PrimusC2 in more detail. If you hav
 ### CLI 
 To generate a listener through the CLI, the following commands can be utilized: 
 ```
-listener -g TCP
 listener -g HTTP
 ```
 For the HTTP listener, two options will be available: 
@@ -151,7 +177,7 @@ For the HTTP listener, two options will be available:
 
 ## Implants 
 
-3 types of implants exist in the current version of PrimusC2. TCP, HTTP and HTTPS. The two first are the most common and are easily generated using the command:
+2 types of implants exist in the current version of PrimusC2, HTTP and HTTPS. The first one is the most common and is  easily generated using the command:
 
 `nimplant -g <TYPE>`
 
@@ -204,7 +230,7 @@ Enter the domain name for the redirector and implant: foo.gooddomain.com
 ```
 Press enter and then wait :)
 
-
+<!---
 ### TCP Dumb pipe redirector
 **Prerequisites**
 
@@ -216,6 +242,7 @@ In order to deploy the redirector for the first time. It's needed to modify `Pri
 When generating a listener it is now possible to provision a redirector that uses a VPS with SOCAT to redirect traffic back to internal C2 server. 
 
 **Example:**
+
 
 ```
 ╔═╗┬─┐┬┌┬┐┬ ┬┌─┐  ╔═╗2
@@ -231,7 +258,7 @@ Enter command#>listener -g TCP
 [*] Choose an option: 3
 ```
 Press enter and then wait :)
-
+-->
 
 ## Advanced commands
 
@@ -253,13 +280,3 @@ In order to execute a .NET assembly through PrimusC2, place the .NET assembly in
 > When placing a payload in the `PrimusC2/C2/Payloads` directory and running the `payloads` command, it will automatically add the payload name to the autocomplete list.
 {: .prompt-tip }
 
-
-## Debug
-
-### [-] An error occurred while compiling the implant
-The issue if you see this error message is likely that Nim is not installed properly or the nim dependencies have not been installed correctly. To debug this issue please try and compile the implant manually to see the error from the compiler. 
-
-Compile command: 
-```
-nim c -d:mingw -d:release --cpu:amd64 implant.nim
-```

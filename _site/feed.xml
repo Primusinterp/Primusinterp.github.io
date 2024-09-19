@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>. .\Primusinterp</title>
   <subtitle>An offenisve Security blog about hacking, Active Directory, maldev and other cyber security/redteam related stuff.</subtitle>
-  <updated>2024-05-26T11:08:47+02:00</updated>
+  <updated>2024-09-19T19:52:23+02:00</updated>
   <author>
     <name>Oliver Albertsen</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,56 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>PrimusC2 - New Release | Update 5.0</title>
+    <link href="http://localhost:4000/posts/PrimusC2_update_5.0/" rel="alternate" type="text/html" title="PrimusC2 - New Release | Update 5.0" />
+    <published>2024-09-16T00:00:00+02:00</published>
+  
+    <updated>2024-09-16T00:00:00+02:00</updated>
+  
+    <id>http://localhost:4000/posts/PrimusC2_update_5.0/</id>
+    <content src="http://localhost:4000/posts/PrimusC2_update_5.0/" />
+    <author>
+      <name>Oliver Albertsen</name>
+    </author>
+
+  
+    
+    <category term="PrimusC2" />
+    
+    <category term="updates" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      
+Time for another update for PrimusC2. It includes significant changes to the project in order to create a more stable baseline for upcoming updates.
+
+PrimusC2 Github link
+
+What’s new:
+
+  Migrated to using a DB 😎
+    
+      Persistent sessions
+      All logic use the DB for data retrieval and storage
+      Almost got rid of the use of global vars and non-persistent data types
+    
+  
+  TCP impl...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -188,59 +238,6 @@ What’s new:
       Registry persistance capability
       Download of files from target
       Callback interval(Sleep) a...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>PrimusC2 - New Release | Update 2.0</title>
-    <link href="http://localhost:4000/posts/PrimusC2_update/" rel="alternate" type="text/html" title="PrimusC2 - New Release | Update 2.0" />
-    <published>2023-11-19T00:00:00+01:00</published>
-  
-    <updated>2023-12-28T19:00:14+01:00</updated>
-  
-    <id>http://localhost:4000/posts/PrimusC2_update/</id>
-    <content src="http://localhost:4000/posts/PrimusC2_update/" />
-    <author>
-      <name>Oliver Albertsen</name>
-    </author>
-
-  
-    
-    <category term="PrimusC2" />
-    
-    <category term="updates" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      
-I am very happy to have this new update of PrimusC2 released. I have hit some pretty big milestones with the project and done some cool stuff.
-
-PrimusC2 Github link
-
-What’s new:
-
-  File Operations
-    
-      cd
-      ls 
-      pwd
-    
-  
-  Execute .NET Assembly in memory (HYPE)
-  Revamp of data transfer between server and implant 
-  Added more exception handling (not bulletproof yet)
-  Change...
     </summary>
   
 

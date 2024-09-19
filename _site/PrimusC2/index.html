@@ -45,12 +45,12 @@
 <meta property="og:url" content="http://localhost:4000/PrimusC2/" />
 <meta property="og:site_name" content=". .\Primusinterp" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-05-26T11:08:47+02:00" />
+<meta property="article:published_time" content="2024-09-19T19:52:23+02:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="PrimusC2" />
 <meta name="twitter:site" content="@AlbertsenOliver" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-05-26T11:08:47+02:00","datePublished":"2024-05-26T11:08:47+02:00","description":"An offenisve Security blog about hacking, Active Directory, maldev and other cyber security/redteam related stuff.","headline":"PrimusC2","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/PrimusC2/"},"url":"http://localhost:4000/PrimusC2/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-09-19T19:52:23+02:00","datePublished":"2024-09-19T19:52:23+02:00","description":"An offenisve Security blog about hacking, Active Directory, maldev and other cyber security/redteam related stuff.","headline":"PrimusC2","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/PrimusC2/"},"url":"http://localhost:4000/PrimusC2/"}</script>
 <!-- End Jekyll SEO tag -->
 
   
@@ -797,18 +797,6 @@
       
 
     
-      
-
-      
-      
-
-      
-      
-      
-
-      
-
-    
 
     
 
@@ -961,13 +949,13 @@
 
 <em
   class=""
-  data-ts="1716714527"
+  data-ts="1726768343"
   data-df="ll"
   
     data-bs-toggle="tooltip" data-bs-placement="bottom"
   
 >
-  May 26, 2024
+  Sep 19, 2024
 </em>
 
     </span>
@@ -1013,9 +1001,9 @@
   class="readtime"
   data-bs-toggle="tooltip"
   data-bs-placement="bottom"
-  title="1335 words"
+  title="1228 words"
 >
-  <em>7 min</em> read</span>
+  <em>6 min</em> read</span>
 
     </div>
 
@@ -1038,6 +1026,35 @@
 <p>If interested you can download my bachelor thesis <a href="/assets/Bachelor_Report_Oliver_Albertsen.pdf">here</a> - keep in mind that a lot has changed for the framework since its publication, so some aspects may not apply any more.</p>
 
 <h2 id="installation"><span class="me-2">Installation</span><a href="#installation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
+
+<h3 id="the-easy-way"><span class="me-2">The easy way</span><a href="#the-easy-way" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
+<p>Docker shenanigans</p>
+
+<p>Clone and cd into the <code class="language-plaintext highlighter-rouge">PrimusC2</code> folder</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre>git clone https://github.com/Primusinterp/PrimusC2.git
+
+<span class="nb">cd </span>PrimusC2
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>build all the things!</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>docker build <span class="nt">-t</span> primusc2 <span class="nb">.</span>   
+</pre></td></tr></tbody></table></code></div></div>
+
+<p>Run all the things!</p>
+<div class="language-bash highlighter-rouge"><div class="code-header">
+        <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
+      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+</pre></td><td class="rouge-code"><pre><span class="nb">sudo </span>docker run <span class="nt">--network</span><span class="o">=</span>host <span class="nt">-v</span> <span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span>/C2/Generated_Implants:/app/C2/Generated_Implants/ <span class="nt">-it</span> primusc2
+</pre></td></tr></tbody></table></code></div></div>
+<h3 id="the-hard-way"><span class="me-2">The hard way</span><a href="#the-hard-way" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
 <p>To get the dependencies installed and the server ready to go, it’s needed to run the setup script and a few manual commands.</p>
 
 <p>git clone <code class="language-plaintext highlighter-rouge">PrimusC2</code></p>
@@ -1078,13 +1095,11 @@ nimble install -y puppy
 nimble install -y byteutils
 </pre></td></tr></tbody></table></code></div></div>
 <p>Run the server from the C2 folder:</p>
-
 <div class="language-bash highlighter-rouge"><div class="code-header">
         <span data-label-text="Shell"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
 </pre></td><td class="rouge-code"><pre><span class="nb">sudo</span> <span class="nt">-E</span> python3 server.py
 </pre></td></tr></tbody></table></code></div></div>
-<p><em>If any issues arise while running the nimplant command, try and compile the implant manually to see errors</em></p>
 
 <h2 id="features"><span class="me-2">Features</span><a href="#features" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 <ul>
@@ -1098,8 +1113,10 @@ nimble install -y byteutils
   <li>GetAV - current anti-virus products installed</li>
   <li>Powershell download cradle</li>
   <li>Dynamic implant generation</li>
+  <li>.exe, .bin &amp; .dll payload formats.</li>
   <li>Automated Redirector setup via Digital Ocean VPS(Smart-Pipe &amp; Dump-Pipe)</li>
   <li>Web Interface</li>
+  <li>steal_token</li>
 </ul>
 
 <h2 id="usage"><span class="me-2">Usage</span><a href="#usage" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -1136,10 +1153,16 @@ nimble install -y byteutils
 26
 27
 28
+29
+30
+31
+32
+33
 </pre></td><td class="rouge-code"><pre>    <span class="nt">------------------------------------------------------------------------------------------------------</span>
     Menu Commands
     <span class="nt">------------------------------------------------------------------------------------------------------</span>
-    listener <span class="nt">-g</span> &lt;TYPE&gt;          <span class="nt">--</span><span class="o">&gt;</span> Generate a HTTP or TCP listener
+    <span class="nb">help</span> &lt;<span class="nb">command</span><span class="o">&gt;</span>              <span class="nt">--</span><span class="o">&gt;</span> Get <span class="nb">help </span><span class="k">for </span>a specific <span class="nb">command
+    </span>listener <span class="nt">-g</span> &lt;TYPE&gt;          <span class="nt">--</span><span class="o">&gt;</span> Generate a HTTP or TCP listener
     nimplant <span class="nt">-g</span> &lt;TYPE&gt;          <span class="nt">--</span><span class="o">&gt;</span> Generate a compiled exe payload written <span class="k">in </span>nim with advanced capabilities <span class="k">for </span>windows <span class="k">for </span>either TCP or HTTP
     callbacks                   <span class="nt">--</span><span class="o">&gt;</span> List callbacks
     use &lt;callback ID&gt; <span class="o">[</span>use 0]   <span class="nt">--</span><span class="o">&gt;</span> Enter a callback session
@@ -1150,20 +1173,24 @@ nimble install -y byteutils
 
     Implant Commands
     <span class="nt">------------------------------------------------------------------------------------------------------</span>
-    background                  <span class="nt">--</span><span class="o">&gt;</span> Backgrounds current sessions
+    <span class="nb">help</span> &lt;<span class="nb">command</span><span class="o">&gt;</span>              <span class="nt">--</span><span class="o">&gt;</span> Get <span class="nb">help </span><span class="k">for </span>a specific <span class="nb">command
+    </span>background                  <span class="nt">--</span><span class="o">&gt;</span> Backgrounds current sessions
     <span class="nb">exit</span>                        <span class="nt">--</span><span class="o">&gt;</span> Terminate current session
     GetAV                       <span class="nt">--</span><span class="o">&gt;</span> Get the current AV running
-    pwsh &lt;COMMAND&gt;              <span class="nt">--</span><span class="o">&gt;</span> Load CLR and run powershell <span class="k">in </span>unmanged runspace 
+    pwsh &lt;COMMAND&gt;              <span class="nt">--</span><span class="o">&gt;</span> Load CLR and run powershell <span class="k">in </span>unmanaged runspace 
     execute-ASM &lt;file&gt; &lt;args&gt;   <span class="nt">--</span><span class="o">&gt;</span> Execute .NET assembly from memory   
     <span class="nb">ls</span>                          <span class="nt">--</span><span class="o">&gt;</span> List files <span class="k">in </span>current directory
     <span class="nb">cd</span> &lt;<span class="nb">dir</span><span class="o">&gt;</span>                    <span class="nt">--</span><span class="o">&gt;</span> Change current working directory
     <span class="nb">pwd</span>                         <span class="nt">--</span><span class="o">&gt;</span> Print current working directory
     payloads                    <span class="nt">--</span><span class="o">&gt;</span> List payloads available on <span class="k">for </span>either transfer or execution
     shell &lt;COMMAND&gt;             <span class="nt">--</span><span class="o">&gt;</span> Run Windows CMD commands on target
-    <span class="nb">sleep</span> &lt;milseconds&gt;          <span class="nt">--</span><span class="o">&gt;</span> Adjust callback <span class="nb">time</span> <span class="o">[</span>Default 5000] - HTTP only
+    <span class="nb">sleep</span> &lt;milliseconds&gt;        <span class="nt">--</span><span class="o">&gt;</span> Adjust callback <span class="nb">time</span> <span class="o">[</span>Default 5000] - HTTP only
     persist &lt;k_name&gt; &lt;payload&gt;  <span class="nt">--</span><span class="o">&gt;</span> Deploy registry persistance to run a payload on startup<span class="o">(</span>OPSEC: RISKY<span class="o">)</span> - HTTP only
     download &lt;file&gt;             <span class="nt">--</span><span class="o">&gt;</span> Download file from target<span class="o">(</span>dont use <span class="s2">""</span> around file name or path<span class="o">)</span> - HTTP only
-
+    steal_token &lt;PID&gt;           <span class="nt">--</span><span class="o">&gt;</span> Steal token from a process
+    rev2self                    <span class="nt">--</span><span class="o">&gt;</span> Revert impersonation to original context
+    tShell                      <span class="nt">--</span><span class="o">&gt;</span> run CMD.exe commands <span class="k">in </span>the context of the stolen token
+    <span class="nb">whoami</span>                      <span class="nt">--</span><span class="o">&gt;</span> Get the current user context
 </pre></td></tr></tbody></table></code></div></div>
 
 <h3 id="roadmap"><span class="me-2">Roadmap</span><a href="#roadmap" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
@@ -1176,9 +1203,10 @@ nimble install -y byteutils
   <li class="task-list-item"><i class="fas fa-check-circle fa-fw checked"></i>Directory operations</li>
   <li class="task-list-item"><i class="fas fa-check-circle fa-fw checked"></i>HTTP C2 channel</li>
   <li class="task-list-item"><i class="far fa-circle fa-fw"></i>Improve OPSEC</li>
-  <li class="task-list-item"><i class="far fa-circle fa-fw"></i>Rework backend to accommodate a database for persistent storage</li>
+  <li class="task-list-item"><i class="fas fa-check-circle fa-fw checked"></i>Rework backend to accommodate a database for persistent storage</li>
   <li class="task-list-item"><i class="far fa-circle fa-fw"></i>Evasion techniques</li>
   <li class="task-list-item"><i class="far fa-circle fa-fw"></i>Custom Term Rewriting Macro</li>
+  <li class="task-list-item"><i class="far fa-circle fa-fw"></i>Refactor entire code base into multiple files and maybe classes</li>
 </ul>
 
 <h2 id="documentation"><span class="me-2">Documentation</span><a href="#documentation" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
@@ -1195,9 +1223,7 @@ nimble install -y byteutils
 <div class="language-plaintext highlighter-rouge"><div class="code-header">
         <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
       <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-</pre></td><td class="rouge-code"><pre>listener -g TCP
-listener -g HTTP
+</pre></td><td class="rouge-code"><pre>listener -g HTTP
 </pre></td></tr></tbody></table></code></div></div>
 <p>For the HTTP listener, two options will be available:</p>
 <ul>
@@ -1221,7 +1247,7 @@ listener -g HTTP
 
 <h2 id="implants"><span class="me-2">Implants</span><a href="#implants" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
-<p>3 types of implants exist in the current version of PrimusC2. TCP, HTTP and HTTPS. The two first are the most common and are easily generated using the command:</p>
+<p>2 types of implants exist in the current version of PrimusC2, HTTP and HTTPS. The first one is the most common and is  easily generated using the command:</p>
 
 <p><code class="language-plaintext highlighter-rouge">nimplant -g &lt;TYPE&gt;</code></p>
 
@@ -1300,46 +1326,35 @@ Enter the domain name for the redirector and implant: foo.gooddomain.com
 </pre></td></tr></tbody></table></code></div></div>
 <p>Press enter and then wait :)</p>
 
-<h3 id="tcp-dumb-pipe-redirector"><span class="me-2">TCP Dumb pipe redirector</span><a href="#tcp-dumb-pipe-redirector" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<p><strong>Prerequisites</strong></p>
+<!---
+### TCP Dumb pipe redirector
+**Prerequisites**
 
-<p>The following prerequisites needs to be met in order to successfully deploy a SOCAT/Dumb Pipe redirector using an IP address.</p>
-<ul>
-  <li>DigitalOcean account + API key</li>
-</ul>
+The following prerequisites needs to be met in order to successfully deploy a SOCAT/Dumb Pipe redirector using an IP address.
+- DigitalOcean account + API key
 
-<p>In order to deploy the redirector for the first time. It’s needed to modify <code class="language-plaintext highlighter-rouge">PrimusC2/Terraform_TCP/variable.tf</code> and insert the API keys from Digital Ocean.</p>
+In order to deploy the redirector for the first time. It's needed to modify `PrimusC2/Terraform_TCP/variable.tf` and insert the API keys from Digital Ocean. 
 
-<p>When generating a listener it is now possible to provision a redirector that uses a VPS with SOCAT to redirect traffic back to internal C2 server.</p>
+When generating a listener it is now possible to provision a redirector that uses a VPS with SOCAT to redirect traffic back to internal C2 server. 
 
-<p><strong>Example:</strong></p>
+**Example:**
 
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-</pre></td><td class="rouge-code"><pre>╔═╗┬─┐┬┌┬┐┬ ┬┌─┐  ╔═╗2
+
+```
+╔═╗┬─┐┬┌┬┐┬ ┬┌─┐  ╔═╗2
 ╠═╝├┬┘│││││ │└─┐  ║  By Oliver Albertsen
 ╩  ┴└─┴┴ ┴└─┘└─┘  ╚═╝
 [*] Internal PrimusC2 webinterface started on http://127.0.0.1:5000
 [+] AuthKey for this session is YTMx2K15QOYpmdC-0v43OpIz1g
-Enter command#&gt;listener -g TCP
+Enter command#>listener -g TCP
 [*] 1. Interface
 [*] 2. IP-Address
 [*] 3. Listener with redirector
  
 [*] Choose an option: 3
-</pre></td></tr></tbody></table></code></div></div>
-<p>Press enter and then wait :)</p>
+```
+Press enter and then wait :)
+-->
 
 <h2 id="advanced-commands"><span class="me-2">Advanced commands</span><a href="#advanced-commands" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
 
@@ -1365,17 +1380,6 @@ Enter command#&gt;listener -g TCP
   <p>When placing a payload in the <code class="language-plaintext highlighter-rouge">PrimusC2/C2/Payloads</code> directory and running the <code class="language-plaintext highlighter-rouge">payloads</code> command, it will automatically add the payload name to the autocomplete list.</p>
 </blockquote>
 
-<h2 id="debug"><span class="me-2">Debug</span><a href="#debug" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2>
-
-<h3 id="--an-error-occurred-while-compiling-the-implant"><span class="me-2">[-] An error occurred while compiling the implant</span><a href="#--an-error-occurred-while-compiling-the-implant" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3>
-<p>The issue if you see this error message is likely that Nim is not installed properly or the nim dependencies have not been installed correctly. To debug this issue please try and compile the implant manually to see the error from the compiler.</p>
-
-<p>Compile command:</p>
-<div class="language-plaintext highlighter-rouge"><div class="code-header">
-        <span data-label-text="Plaintext"><i class="fas fa-code fa-fw small"></i></span>
-      <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
-</pre></td><td class="rouge-code"><pre>nim c -d:mingw -d:release --cpu:amd64 implant.nim
-</pre></td></tr></tbody></table></code></div></div>
 
 </div>
 
@@ -1732,34 +1736,6 @@ Enter command#&gt;listener -g TCP
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -1796,8 +1772,6 @@ Enter command#&gt;listener -g TCP
     
     
     
-      
-    
   
     
     
@@ -1810,6 +1784,30 @@ Enter command#&gt;listener -g TCP
     
       
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -1898,13 +1896,13 @@ Enter command#&gt;listener -g TCP
         <a class="post-tag btn btn-outline-primary" href="/tags/caddy/">Caddy</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/certificate/">Certificate</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/https/">HTTPS</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/redirector/">Redirector</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/certificate/">Certificate</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/info/">info</a>
@@ -2041,6 +2039,18 @@ Enter command#&gt;listener -g TCP
 
   
 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 
 
 
@@ -2087,6 +2097,52 @@ Enter command#&gt;listener -g TCP
       Further Reading
     </h3>
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 mb-4">
+      
+        
+        
+        <div class="col">
+          <a href="/posts/PrimusC2_update_5.0/" class="card post-preview h-100">
+            <div class="card-body">
+              <!--
+  Date format snippet
+  See: ${JS_ROOT}/utils/locale-dateime.js
+-->
+
+
+
+
+
+<em
+  class="small"
+  data-ts="1726437600"
+  data-df="ll"
+  
+>
+  Sep 16, 2024
+</em>
+
+              <h4 class="pt-0 my-2" data-toc-skip>PrimusC2 - New Release | Update 5.0</h4>
+              <div class="text-muted small">
+                <p>
+                  
+
+
+
+
+
+                  
+Time for another update for PrimusC2. It includes significant changes to the project in order to create a more stable baseline for upcoming updates.
+
+PrimusC2 Github link
+
+What’s new:
+
+  Migrated ...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
       
         
         
@@ -2164,48 +2220,6 @@ Enter command#&gt;listener -g TCP
 
 
 Time for a new bit of content. While working on the latest update for PrimusC2 i spent quite a while creating an automated...
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      
-        
-        
-        <div class="col">
-          <a href="/posts/PrimusC2_update_4.0/" class="card post-preview h-100">
-            <div class="card-body">
-              <!--
-  Date format snippet
-  See: ${JS_ROOT}/utils/locale-dateime.js
--->
-
-
-
-
-
-<em
-  class="small"
-  data-ts="1710802800"
-  data-df="ll"
-  
->
-  Mar 19, 2024
-</em>
-
-              <h4 class="pt-0 my-2" data-toc-skip>PrimusC2 - New Release | Update 4.0</h4>
-              <div class="text-muted small">
-                <p>
-                  
-
-
-
-
-
-                  
-Time for another update for PrimusC2. This update do not have as much content as the previous updates, but it has some stuff that greatly improves the maturity of the project.
-
-PrimusC2 Github lin...
                 </p>
               </div>
             </div>
@@ -2462,34 +2476,6 @@ PrimusC2 Github lin...
     
     
     
-      
-        
-        
-
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-  
-    
-    
-    
-    
-      
-    
-  
-    
-    
-    
-    
-      
-    
   
     
     
@@ -2526,8 +2512,6 @@ PrimusC2 Github lin...
     
     
     
-      
-    
   
     
     
@@ -2540,6 +2524,30 @@ PrimusC2 Github lin...
     
       
     
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+  
+    
+    
+    
+    
+      
+        
+        
+
   
     
     
@@ -2628,13 +2636,13 @@ PrimusC2 Github lin...
         <a class="post-tag btn btn-outline-primary" href="/tags/caddy/">Caddy</a>
       
         
-        <a class="post-tag btn btn-outline-primary" href="/tags/certificate/">Certificate</a>
-      
-        
         <a class="post-tag btn btn-outline-primary" href="/tags/https/">HTTPS</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/redirector/">Redirector</a>
+      
+        
+        <a class="post-tag btn btn-outline-primary" href="/tags/certificate/">Certificate</a>
       
         
         <a class="post-tag btn btn-outline-primary" href="/tags/info/">info</a>
