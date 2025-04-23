@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>. .\Primusinterp</title>
   <subtitle>An offenisve Security blog about hacking, Active Directory, maldev and other cyber security/redteam related stuff.</subtitle>
-  <updated>2024-09-19T19:52:23+02:00</updated>
+  <updated>2025-04-23T15:25:33+02:00</updated>
   <author>
     <name>Oliver Albertsen</name>
     <uri>http://localhost:4000/</uri>
@@ -13,7 +13,7 @@
   <link rel="alternate" type="text/html" hreflang="en"
     href="http://localhost:4000/"/>
   <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
-  <rights> © 2024 Oliver Albertsen </rights>
+  <rights> © 2025 Oliver Albertsen </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 

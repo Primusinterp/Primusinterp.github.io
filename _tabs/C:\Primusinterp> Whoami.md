@@ -66,3 +66,13 @@ Red Teamer with a passion for testing Active Directory and Offensive Tool Develo
 ### AZ900
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="a50b27ec-9091-46b1-98a1-2fde4e4d36c0" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
+# Courses 
+
+## Sektor 7 Malware Development Essentials
+![Sektor 7 Malware Development Essentials](../assets/img/MDE.png)
+
+## Sektor 7 Malware Development Intermediate
+![Sektor 7 Malware Development Intermediate](../assets/img/MDI.png)
+
+## Constructing Defense
+![Constructing Defense](../assets/img/const.png)
