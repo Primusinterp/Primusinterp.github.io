@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>. .\Primusinterp</title>
   <subtitle>An offenisve Security blog about hacking, Active Directory, maldev and other cyber security/redteam related stuff.</subtitle>
-  <updated>2025-04-23T15:25:33+02:00</updated>
+  <updated>2025-08-21T20:49:08+02:00</updated>
   <author>
     <name>Oliver Albertsen</name>
     <uri>http://localhost:4000/</uri>
@@ -17,6 +17,42 @@
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>PrimusRedir - Fowarding the world to your C2</title>
+    <link href="http://localhost:4000/posts/Primus_Redir/" rel="alternate" type="text/html" title="PrimusRedir - Fowarding the world to your C2" />
+    <published>2025-08-21T00:00:00+02:00</published>
+  
+    <updated>2025-08-21T00:00:00+02:00</updated>
+  
+    <id>http://localhost:4000/posts/Primus_Redir/</id>
+    <content src="http://localhost:4000/posts/Primus_Redir/" />
+    <author>
+      <name>Oliver Albertsen</name>
+    </author>
+
+  
+    
+    <category term="Redteam" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      Time for a new bit of content. While working on the latest update for PrimusC2 i spent quite a while creating an automated redirector infrastructure utilizing a Digital Ocean VPS, Cloudflare, Wireguard and Caddy. This was implemented directly into PrimusC2, but i also turned this into a standalone tool that you can use with any C2: PrimusRedir
+
+This was done in order to have a standalone tool t...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -101,44 +137,6 @@ What’s new:
       I’m very pleased to announce that I passed the Certified Red Team Operator(CRTO), from Zero-Point Security. It was quite an enjoyable experience, appreciating not only the opportunity to reinforce my existing knowledge but also the newly gained skills.
 
 Throughout this post, I will go through my thoughts about the learning material, the exam experience, and the final conclusion about the certif...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>PrimusRedir - Fowarding the world to your C2</title>
-    <link href="http://localhost:4000/posts/Primus_Redir/" rel="alternate" type="text/html" title="PrimusRedir - Fowarding the world to your C2" />
-    <published>2024-04-14T00:00:00+02:00</published>
-  
-    <updated>2024-04-14T00:00:00+02:00</updated>
-  
-    <id>http://localhost:4000/posts/Primus_Redir/</id>
-    <content src="http://localhost:4000/posts/Primus_Redir/" />
-    <author>
-      <name>Oliver Albertsen</name>
-    </author>
-
-  
-    
-    <category term="Redteam" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      
-  The tool itself has not been released yet, but its coming very soon!.
-
-
-Time for a new bit of content. While working on the latest update for PrimusC2 i spent quite a while creating an automated redirector infrastructure utilizing a Digital Ocean VPS, Cloudflare, Wireguard and Caddy. This was implemented directly into PrimusC2, but i also turned this into a standalone tool that you can use w...
     </summary>
   
 

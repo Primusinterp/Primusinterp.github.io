@@ -6,10 +6,11 @@ toc: true
 ---
  
 
-> The tool itself has not been released yet, but its coming very soon!.
-{: .prompt-warning }
 
-Time for a new bit of content. While working on the latest update for PrimusC2 i spent quite a while creating an automated redirector infrastructure utilizing a Digital Ocean VPS, Cloudflare, Wireguard and Caddy. This was implemented directly into PrimusC2, but i also turned this into a standalone tool that you can use with any C2: PrimusRedir
+
+Time for a new bit of content. While working on the latest update for PrimusC2 i spent quite a while creating an automated redirector infrastructure utilizing a Digital Ocean VPS, Cloudflare, Wireguard and Caddy. This was implemented directly into PrimusC2, but i also turned this into a standalone tool that you can use with any C2: [PrimusRedir](https://github.com/Primusinterp/PrimusRedir)
+
+This was done in order to have a standalone tool that could be used to spin up the needed infrastructure easy and quickly for a wide range of C2 frameworks. The following sections provide an introduction to redirectors and how they work, while the final section covers details about PrimusRedir.
 
 
 ## Redirectors in Red Teaming  
@@ -46,7 +47,7 @@ All the above are viable solutions in terms of what system and validation type t
 
 With the basics covered i will now introduce my take on a simple, flexible and easy to configure redirector setup using a VPS in the cloud. `PrimusRedir` is a Python script that handles the provisioning, configuration and teardown of a simple redirector in the cloud. In the coming sections i will go into more detail about the components of `PrimusRedir`.
 
-## Overview 
+## Overview of [PrimusRedir](https://github.com/Primusinterp/PrimusRedir)
 PrimusRedir consists of the following components: 
 
 - Cloudflare for DNS.
@@ -54,6 +55,8 @@ PrimusRedir consists of the following components:
 - Wireguard connection between the VPS and the C2 server.
 - Digital Ocean VPS
 - Terraform as IaC
+
+With just a few commands, you will have a redirector up and running for your C2.
 
 ### Cloudflare 
 I selected Cloudflare as the DNS provider due to its advantage of rapid DNS propagation when initializing the redirector. Cloudflare allows you to add your domain as a site prior to the start of the engagement. This provides the operator with the opportunity to alter the nameservers at the domain registrar, ensuring everything is set up and ready before the engagement begins. This process can be carried out continuously, providing the operator with a multitude of domains to use when setting up the redirectors.
@@ -63,15 +66,113 @@ It's pretty straight forward to add your domain as site on Cloudflare, just foll
 > If the DNS settings is set to *proxy* when the DNS record is registered, please change to *DNS only*.
 {: .prompt-warning }
 
+#### Setting Up Cloudflare API Token
 
-*The rest of the content still needs to be written and are currently not ready to be released, once ready it will be added here along with the tool*
+To use PrimusRedir, you'll need to create a Cloudflare API token with the correct permissions. Follow these steps:
+
+1. **Add Your Domain to Cloudflare**
+   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com)
+   - Click "Add a Site" and enter your domain
+   - Choose the Free plan
+   - Delete all existing DNS entries (we'll add them later)
+   - Copy the two Cloudflare nameservers provided
+   - Go to your domain registrar and update the nameservers to the Cloudflare ones
+
+2. **Create API Token**
+   - Navigate to [API Tokens](https://dash.cloudflare.com/profile/api-tokens)
+   - Click "Create Token" → "Create Custom Token"
+   - Use the following settings:
+
+   **Token Name:** `PrimusRedir DNS Token` (or any descriptive name)
+   
+   **Permissions:**
+   - Zone → DNS → Edit
+   - Zone → Zone → Edit
+   
+   **Zone Resources:**
+   - Include → All zones (or specific zones if you prefer)
+   
+   **Client IP Address Filtering:**
+   - Leave as default (all addresses) or restrict to your IP range
+   
+   **TTL:**
+   - Set an appropriate expiration date (recommend 6-12 months)
+
+3. **Copy and Store Token**
+   - After creating the token, copy the generated API key
+   - Store it securely - you won't be able to see it again
+   - Use this token when running `python3 Primus_redir.py --config`
+
+> **Important:** The API token needs both Zone and DNS edit permissions to create and manage DNS records automatically. Without these permissions, PrimusRedir will fail to provision the redirector.
+{: .prompt-warning }
+
+Once configured, PrimusRedir will automatically handle DNS record creation and management for your redirector domains.
+
 ### Caddy 
+
+Caddy serves as the reverse proxy and traffic filtering component in PrimusRedir. It's chosen for its simplicity, automatic SSL/TLS certificate management via Let's Encrypt. The Caddy configuration implements smart pipe redirection by:
+
+1. **User-Agent Validation**: Only allowing traffic with specific User-Agent strings (configurable during setup)
+2. **Traffic Filtering**: Blocking known malicious IPs and User-Agents from security scanners, bots, and crawlers
+3. **Legitimate Traffic Redirection**: Forwarding valid C2 traffic to the backend C2 server
+4. **Decoy Responses**: Redirecting invalid traffic to legitimate websites or showing fake "under construction" pages
+
+The Caddy configuration automatically handles SSL/TLS termination, ensuring all external communication is encrypted while maintaining the internal HTTP communication between Caddy and the C2 server.
+
 
 ### Wireguard 
 
+Wireguard provides the secure tunnel between the operator's machine and the VPS redirector. This creates a private network (192.168.255.0/24) where:
+
+- The VPS acts as the Wireguard server (192.168.255.1)
+- The operator's machine becomes a Wireguard client (192.168.255.2)
+- All C2 traffic flows through this encrypted tunnel
+- The tunnel is automatically configured and started during provisioning
+
+
+
 ### Digital Ocean VPS
+
+Digital Ocean provides the cloud infrastructure for the redirector. PrimusRedir automatically:
+
+- Provisions a new VPS instance
+- Configures the operating system with necessary packages
+- Sets up Docker and Caddy containers
+- Establishes the Wireguard server
+- Configures firewall rules for the redirector
+
+The VPS serves as the public-facing endpoint that receives C2 traffic from implants while keeping the actual C2 server location masked.
 
 ### Terraform
 
+Terraform handles the Infrastructure as Code (IaC) aspects of PrimusRedir, automating:
+
+- VPS provisioning and configuration
+- DNS record management via Cloudflare API
+- VPS firewall setup
+- Resource cleanup and teardown
+
+This ensures consistent, reproducible deployments and easy cleanup when engagements are complete.
+
+### Dual-Listener setup
+
+Some C2 frameworks like Havoc require a dual-listener setup to properly handle the redirector architecture. This is because:
+
+1. **External HTTPS Listener**: Generates implants that connect to the redirector over HTTPS (the public domain)
+2. **Internal HTTP Listener**: Catches the decrypted traffic forwarded by Caddy from the redirector
+
+PrimusRedir includes a built-in feature that outputs the Havoc listener configuration when the `--c2-variant havoc` flag is specified. It automatically generates the complete listener setup, including:
+
+- **Listener 1**: External HTTPS listener for implant generation
+- **Listener 2**: Internal HTTP listener for Caddy traffic forwarding
+
+
+
+The listener config can then be copied into the havoc profile and then all the listeners will be running when you spin up havoc. 
+
+## Conclusion 
+As stated, I built this tool to have a simple way of spinning up redirectors for a wide range of C2 frameworks quickly, with room for customization and expandability. After being a private project for quite a while, it’s finally going public as an open-source release.
+
+---
+
 ![mando](/assets/img/mando.gif)
-  
