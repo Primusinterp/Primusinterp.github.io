@@ -8,7 +8,7 @@ order: 4
 
 ## Primusinterp
 ---
-Red Teamer with a passion for testing Active Directory and Offensive Tool Development. I love to learn new skills and expand my repertoire of knowledge. 
+Red Teamer with a passion for Active Directory and malware development. I love to learn new skills and expand my repertoire of knowledge. 
 
 - Github: [https://github.com/Primusinterp](https://github.com/Primusinterp)
 
@@ -67,6 +67,9 @@ Red Teamer with a passion for testing Active Directory and Offensive Tool Develo
 <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="a50b27ec-9091-46b1-98a1-2fde4e4d36c0" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
 # Courses 
+
+## Modern Initial Access 2.0
+![Sektor 7 Malware Development Essentials](../assets/img/mia2.0.png)
 
 ## Sektor 7 Malware Development Essentials
 ![Sektor 7 Malware Development Essentials](../assets/img/MDE.png)

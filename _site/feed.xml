@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>. .\Primusinterp</title>
   <subtitle>An offenisve Security blog about hacking, Active Directory, maldev and other cyber security/redteam related stuff.</subtitle>
-  <updated>2025-08-21T20:49:08+02:00</updated>
+  <updated>2026-01-03T09:43:04+01:00</updated>
   <author>
     <name>Oliver Albertsen</name>
     <uri>http://localhost:4000/</uri>
@@ -12,11 +12,45 @@
   <link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml"/>
   <link rel="alternate" type="text/html" hreflang="en"
     href="http://localhost:4000/"/>
-  <generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator>
-  <rights> © 2025 Oliver Albertsen </rights>
+  <generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator>
+  <rights> © 2026 Oliver Albertsen </rights>
   <icon>/assets/img/favicons/favicon.ico</icon>
   <logo>/assets/img/favicons/favicon-96x96.png</logo>
 
+
+  
+  <entry>
+    <title>Cheesing Microsoft Attack Surface Reduction rules</title>
+    <link href="http://localhost:4000/posts/WindowsASR/" rel="alternate" type="text/html" title="Cheesing Microsoft Attack Surface Reduction rules" />
+    <published>2025-11-11T00:00:00+01:00</published>
+  
+    <updated>2025-11-11T00:00:00+01:00</updated>
+  
+    <id>http://localhost:4000/posts/WindowsASR/</id>
+    <content src="http://localhost:4000/posts/WindowsASR/" />
+    <author>
+      <name>Oliver Albertsen</name>
+    </author>
+
+  
+    
+    <category term="Redteam" />
+    
+  
+
+  
+    <summary>
+      
+
+
+
+
+
+      While working on varying engagements i have been messing with Microsoft Attack Surface Reduction (ASR) quite a bit, since clients often use it to make the life of adversaries(and red teamers) just a tad harder. While working on these engagements i have  compiled some tips and tricks in order to bypass/evade some of the rules that ASR offers. In this post i will dive into what ASR is and some of...
+    </summary>
+  
+
+  </entry>
 
   
   <entry>
@@ -188,54 +222,6 @@ What’s new:
       Caddy
       Modularity
     ...
-    </summary>
-  
-
-  </entry>
-
-  
-  <entry>
-    <title>PrimusC2 - New Release | Update 3.0</title>
-    <link href="http://localhost:4000/posts/PrimusC2_update_3.0/" rel="alternate" type="text/html" title="PrimusC2 - New Release | Update 3.0" />
-    <published>2023-12-24T00:00:00+01:00</published>
-  
-    <updated>2024-04-12T16:11:46+02:00</updated>
-  
-    <id>http://localhost:4000/posts/PrimusC2_update_3.0/</id>
-    <content src="http://localhost:4000/posts/PrimusC2_update_3.0/" />
-    <author>
-      <name>Oliver Albertsen</name>
-    </author>
-
-  
-    
-    <category term="PrimusC2" />
-    
-    <category term="updates" />
-    
-  
-
-  
-    <summary>
-      
-
-
-
-
-
-      
-I am very happy to have this new update of PrimusC2 released. I have completed a lot of the tasks on the roadmap and made more Qol stuff that makes the C2 more nice to use and work with!
-
-PrimusC2 Github link
-
-What’s new:
-
-  HTTP based implant 😎 
-    
-      Execute .NET Assembly in memory
-      Registry persistance capability
-      Download of files from target
-      Callback interval(Sleep) a...
     </summary>
   
 
