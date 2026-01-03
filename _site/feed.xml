@@ -4,7 +4,7 @@
   <id>http://localhost:4000/</id>
   <title>. .\Primusinterp</title>
   <subtitle>An offenisve Security blog about hacking, Active Directory, maldev and other cyber security/redteam related stuff.</subtitle>
-  <updated>2026-01-03T09:43:04+01:00</updated>
+  <updated>2026-01-03T09:46:56+01:00</updated>
   <author>
     <name>Oliver Albertsen</name>
     <uri>http://localhost:4000/</uri>
@@ -22,9 +22,9 @@
   <entry>
     <title>Cheesing Microsoft Attack Surface Reduction rules</title>
     <link href="http://localhost:4000/posts/WindowsASR/" rel="alternate" type="text/html" title="Cheesing Microsoft Attack Surface Reduction rules" />
-    <published>2025-11-11T00:00:00+01:00</published>
+    <published>2026-01-03T00:00:00+01:00</published>
   
-    <updated>2025-11-11T00:00:00+01:00</updated>
+    <updated>2026-01-03T00:00:00+01:00</updated>
   
     <id>http://localhost:4000/posts/WindowsASR/</id>
     <content src="http://localhost:4000/posts/WindowsASR/" />
